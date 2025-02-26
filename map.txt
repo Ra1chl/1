@@ -1,0 +1,8 @@
+ship;Nachazis se na lodi, muzes se presunout na stanici;station
+hangar;Nachazis se na hangar, muzes se presunout na stanici;station
+station;Nachazis se na  station, muzes se presunout na  ship bandit planetA planetB planetC asteroid;ship;bandit;planetA;planetB;planetC;asteroid
+planetA;Nachazis se na  planetA, muzes se presunout na ship bandit planetB planetC asteroid ;station;asteroid
+planetB;Nachazis se na planetB , muzes se presunout na  ship bandit planetA planetC asteroid;station;asteroid
+planetC;Nachazis se na  , muzes se presunout na  ;station;asteroid
+asteroid;Nachazis se na  , muzes se presunout na  ;bandit
+bandit;Nachazis se na  , muzes se presunout na  ;asteroid
