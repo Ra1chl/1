@@ -1,8 +1,8 @@
-ship;Nachazis se na lodi, muzes se presunout na stanici;station
-hangar;Nachazis se na hangar, muzes se presunout na stanici;station
-station;Nachazis se na  station, muzes se presunout na  ship bandit planetA planetB planetC asteroid;ship;bandit;planetA;planetB;planetC;asteroid
-planetA;Nachazis se na  planetA, muzes se presunout na ship bandit planetB planetC asteroid ;station;asteroid
-planetB;Nachazis se na planetB , muzes se presunout na  ship bandit planetA planetC asteroid;station;asteroid
-planetC;Nachazis se na  , muzes se presunout na  ;station;asteroid
-asteroid;Nachazis se na  , muzes se presunout na  ;bandit
-bandit;Nachazis se na  , muzes se presunout na  ;asteroid
+ship;Zde muzes spravovat svou lod a svuj inventar.;station
+hangar;Zde si muzes opravit/vylepsit svou lod. ;station
+station;Zde muzes prodat svoje zasoby a obchodavat s mistnim obchodnikem.;ship;hangar;planeta;planetb;planetc;
+planeta;POZOR! Vysoce rizikové prostředí s nebezpečnou radiací, ale bohaté na určité suroviny.;station;asteroid
+planetb;POZOR! Extrémní podmínky s omezenými zdroji, ale se vzácnými rudami.;station;asteroid
+planetc;POZOR! Bohaté přírodní prostředí, ale s agresivními příšerami.;station;asteroid
+asteroid;POZOR! Oblast s cennými kovy, kde je navigace náročná.;bandit;planeta;planetb;planetc;
+bandit; NEZNAME MISTO... ;asteroid
