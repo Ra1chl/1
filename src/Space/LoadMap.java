@@ -9,7 +9,7 @@ import java.util.HashMap;
 public class LoadMap {
 
     public ArrayList<Location> map = new ArrayList<>();
-    private HashMap<String, Location> locations = new HashMap<>(); // Pro rychlé vyhledávání lokací
+    private HashMap<String, Location> locations = new HashMap<>();
 
     public boolean loadMap() {
         try (BufferedReader br = new BufferedReader(new FileReader("map.txt"))) {
@@ -18,7 +18,6 @@ public class LoadMap {
             // 1. Nejprve vytvoříme všechny lokace, ale ještě je nepropojujeme
             while ((line = br.readLine()) != null) {
                 String[] parts = line.split(";");
-                if (parts.length < 2) continue; // Ochrana proti chybným řádkům
 
                 String name = parts[0].trim();
                 String info = parts[1].trim();
@@ -67,5 +66,14 @@ public class LoadMap {
             case "hangar": return new Hangar(name, info, neighbors);
             default: return null; // Pokud název neodpovídá žádné třídě, vrátíme null
         }
+    }
+
+    public Location findLocation(String name) {
+        for (Location loc : map) {
+            if (loc.name.equalsIgnoreCase(name)) {
+                return loc;
+            }
+        }
+        return null;
     }
 }
