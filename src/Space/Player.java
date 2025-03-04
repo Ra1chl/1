@@ -3,33 +3,29 @@ package Space;
 import java.util.ArrayList;
 
 public class Player {
-    private Location currentLocation;
+    private String name;
+    private int credits; // Peníze
+    private ArrayList<Item> inventory;
 
-    public Player(Location startingLocation) {
-        this.currentLocation = startingLocation;
+    public Player(String name, int credits, ArrayList<Item> inventory) {
+        this.name = name;
+        this.credits = 100;
+        this.inventory = inventory;
     }
 
-
-    public boolean moveTo(Location destination) {
-        if (currentLocation.canMoveTo(destination.name)) {
-            currentLocation = destination;
-            System.out.println("Přesunul ses na: " + destination.name);
-            System.out.println(destination.info);
-            return true;
-        } else {
-            System.out.println("Nemůžeš se tam přesunout!");
-            return false;
-        }
+    public void addItem(Item item) {
+        // Přidání předmětu do inventáře
     }
 
-    public void showAvailableMoves() {
-        System.out.println("Můžeš se přesunout na:");
-        for (String neighbor : currentLocation.neighbors) {
-            System.out.println("- " + neighbor);
-        }
+    public void removeItem(Item item) {
+        // Odebrání předmětu z inventáře
     }
 
-    public Location getCurrentLocation() {
-        return currentLocation;
+    public void buyItem(Item item, int price) {
+        // Koupě předmětu
+    }
+
+    public void sellItem(Item item, int price) {
+        // Prodej předmětu
     }
 }
