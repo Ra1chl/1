@@ -1,7 +1,7 @@
 import Space.LoadMap;
 import Space.Location;
 import Space.Movement;
-import Space.Player;
+import Space.Move;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,8 +18,8 @@ public class Main {
             return;
         }
 
-        Player player = new Player(startLocation);
-        Movement movement = new Movement(player, loader);
+        Move move = new Move(startLocation);
+        Movement movement = new Movement(move, loader);
 
         // Spustíme pohybovou logiku
         movement.startMovement();

@@ -9,7 +9,11 @@ import java.util.HashMap;
 public class LoadMap {
 
     public ArrayList<Location> map = new ArrayList<>();
-    private HashMap<String, Location> locations = new HashMap<>();
+    private HashMap<String, Location> locations;
+
+    public LoadMap() {
+        locations = new HashMap<>();
+    }
 
     public boolean loadMap() {
         try (BufferedReader br = new BufferedReader(new FileReader("map.txt"))) {
@@ -76,4 +80,5 @@ public class LoadMap {
         }
         return null;
     }
+
 }

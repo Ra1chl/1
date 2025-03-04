@@ -16,6 +16,7 @@ public abstract class Location {
 
 
     public boolean canMoveTo(String destination) {
+        // Ověření jestli lze jít na sousední lokaci
         return neighbors.contains(destination);
     }
 
