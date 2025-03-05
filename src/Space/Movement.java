@@ -3,11 +3,11 @@ package Space;
 import java.util.Scanner;
 
 public class Movement {
-    private Move move;
+    private Game game;
     private LoadMap loader;
 
-    public Movement(Move move, LoadMap loader) {
-        this.move = move;
+    public Movement(Game game, LoadMap loader) {
+        this.game = game;
         this.loader = loader;
     }
 
@@ -15,9 +15,9 @@ public class Movement {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("\nJsi na lokaci: " + move.getCurrentLocation().name);
-            System.out.println(move.getCurrentLocation().info);
-            move.showAvailableMoves();
+            System.out.println("\nJsi na lokaci: " + game.getCurrentLocation().name);
+            System.out.println(game.getCurrentLocation().info);
+            game.showAvailableMoves();
 
             System.out.print("Kam chceš jít? (napiš název lokace nebo 'exit' pro ukončení): ");
             String input = scanner.nextLine().trim().toLowerCase();
@@ -33,7 +33,7 @@ public class Movement {
                 continue;
             }
 
-            move.moveTo(destination);
+            game.moveTo(destination);
         }
 
         scanner.close();

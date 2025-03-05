@@ -1,9 +1,9 @@
 package Space;
 
-public class Move {
+public class Game {
     private Location currentLocation;
 
-    public Move(Location startingLocation) {
+    public Game(Location startingLocation) {
         this.currentLocation = startingLocation;
     }
 
@@ -11,8 +11,6 @@ public class Move {
     public boolean moveTo(Location destination) {
         if (currentLocation.canMoveTo(destination.name)) {
             currentLocation = destination;
-            System.out.println("Přesunul ses na: " + destination.name);
-            System.out.println(destination.info);
             return true;
         } else {
             System.out.println("Nemůžeš se tam přesunout!");
