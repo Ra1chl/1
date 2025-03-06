@@ -1,9 +1,10 @@
 package Command;
 
-public class Quit extends Command {
+public class Quit implements Command {
+
     @Override
     public String execute() {
-        return "Program byl ukoncen";
+        return "the end";
     }
 
     @Override

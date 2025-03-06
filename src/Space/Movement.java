@@ -11,10 +11,14 @@ public class Movement {
         this.loader = loader;
     }
 
+    public Movement() {
+
+    }
+
     public void startMovement() {
         Scanner scanner = new Scanner(System.in);
 
-        while (true) {
+         while (true) {
             System.out.println("\nJsi na lokaci: " + game.getCurrentLocation().name);
             System.out.println(game.getCurrentLocation().info);
             game.showAvailableMoves();
@@ -38,4 +42,6 @@ public class Movement {
 
         scanner.close();
     }
+
+
 }
