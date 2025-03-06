@@ -4,15 +4,20 @@ import Space.*;
 import java.util.Scanner;
 
 public class Move implements Command {
-    private Game game;
-    private LoadMap loader;
+    private static Game game;
+    private static LoadMap loader;
+    private static boolean firstMove = true;
 
-    public Move() {
-        this.game = game;
-        this.loader = loader;
+    public Move(Game gameInstance, LoadMap loadMapInstance) {
+        game = gameInstance;
+        loader = loadMapInstance;
     }
 
     public String execute() {
+        if (game == null || loader == null) {
+            return "Hra nebyla správně inicializována!";
+        }
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("\nJsi na lokaci: " + game.getCurrentLocation().name);
         System.out.println(game.getCurrentLocation().info);
@@ -27,6 +32,7 @@ public class Move implements Command {
         }
 
         if (game.moveTo(destination)) {
+            firstMove = false;
             return "Přesunul ses na " + destination.name;
         } else {
             return "Nemůžeš se tam přesunout!";

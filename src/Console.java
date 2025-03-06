@@ -1,38 +1,30 @@
 import java.util.HashMap;
 import java.util.Scanner;
-
 import Command.*;
-import Space.Game;
-import Space.LoadMap;
+import Space.*;
 
 public class Console {
     private HashMap<String, Command> map = new HashMap<>();
     private boolean exit = false;
-
-    private Game game;
-    private LoadMap loader;
-
-    public void inicialization() {
-        map.put("stop", new Quit());
-        map.put("move", new Move());
-    }
-
     private Scanner scanner = new Scanner(System.in);
 
+    public Console(Game game, LoadMap loader, Move moveCommand) {
+        map.put("stop", new Quit());
+        map.put("move", moveCommand);
+    }
+
     public void doCommand() {
-        System.out.print(">>");
-        String command = scanner.nextLine();
-        command = command.trim();
-        command = command.toLowerCase();
+        System.out.print(">> ");
+        String command = scanner.nextLine().trim().toLowerCase();
+
         if (map.containsKey(command)) {
             System.out.println(">> " + map.get(command).execute());
         } else {
-            System.out.println(">> Nondefined command");
+            System.out.println(">> Nedefinovaný příkaz");
         }
     }
 
     public void start() {
-        inicialization();
         try {
             do {
                 doCommand();
@@ -42,3 +34,4 @@ public class Console {
         }
     }
 }
+
