@@ -13,8 +13,23 @@ public class Player {
         this.inventory = inventory;
     }
 
+    public void showInventory() {
+        System.out.println("You have " + inventory.size() + " items");
+
+        for (Item item : inventory) {
+            System.out.println(item);
+        }
+
+    }
+
     public void addItem(Item item) {
         // Přidání předmětu do inventáře
+        if (inventory.size() < 21){
+            inventory.add(item);
+            System.out.println("You put "+ item.getItemName() + " into the inventory");
+        }else {
+            System.out.println("You have full inventory. Go back to the station");
+        }
     }
 
     public void removeItem(Item item) {
@@ -25,7 +40,22 @@ public class Player {
         // Koupě předmětu
     }
 
-    public void sellItem(Item item, int price) {
-        // Prodej předmětu
+    public void sellItem() {
+        int sumPrice = 0;
+
+        for (Item i : inventory) {
+            sumPrice += i.getPrice();
+        }
+
+        this.credits += sumPrice;
+
+    }
+
+    public int getCredits() {
+        return credits;
+    }
+
+    public String getName() {
+        return name;
     }
 }

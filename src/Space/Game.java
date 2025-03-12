@@ -26,7 +26,6 @@ public class Game {
             return;
         }
         Game game = new Game(startLocation);
-        Movement movement = new Movement(game, loader);
 
         // Spustíme pohybovou logiku
         //movement.startMovement();

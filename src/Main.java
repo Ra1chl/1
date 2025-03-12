@@ -1,8 +1,13 @@
+import Command.Inventory;
+import Command.Mine;
 import Command.Move;
+import Command.Shop;
 import Space.LoadMap;
 import Space.Location;
-import Space.Movement;
 import Space.Game;
+import Space.Player;
+
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -20,9 +25,16 @@ public class Main {
         }
 
         Game game = new Game(startLocation);
-        Move moveCommand = new Move(game, loader);
 
-        Console c = new Console(game, loader, moveCommand);
+        // Vytvoření hráče
+        Player player = new Player("Captain", 100, new ArrayList<>());
+
+        Move moveCommand = new Move(game, loader);
+        Inventory inventory = new Inventory(player);
+        Shop shop = new Shop(player,game,loader);
+        Mine mine = new Mine(player,game,loader);
+
+        Console c = new Console(game, loader, moveCommand, inventory,shop,mine);
         c.start();
 
     }

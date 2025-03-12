@@ -1,8 +1,8 @@
-ship;Zde muzes spravovat svou lod a svuj inventar.;station
-hangar;Zde si muzes opravit/vylepsit svou lod. ;station
-station;Zde muzes prodat svoje zasoby a obchodavat s mistnim obchodnikem.;ship;hangar;planeta;planetb;planetc;
-planeta;POZOR! Vysoce rizikové prostředí s nebezpečnou radiací, ale bohaté na určité suroviny.;station;asteroid
-planetb;POZOR! Extrémní podmínky s omezenými zdroji, ale se vzácnými rudami.;station;asteroid
-planetc;POZOR! Bohaté přírodní prostředí, ale s agresivními příšerami.;station;asteroid
-asteroid;POZOR! Oblast s cennými kovy, kde je navigace náročná.;bandit;planeta;planetb;planetc;
-bandit; NEZNAME MISTO... ;asteroid
+ship;Zde muzes spravovat svou lod a svuj inventar.;nothing;null;station
+hangar;Zde si muzes opravit/vylepsit svou lod. ;nothing;mechanic;station
+station;Zde muzes prodat svoje zasoby a obchodavat s mistnim obchodnikem.;nothing;manager;ship;hangar;planeta;planetb;planetc;
+planeta;POZOR! Vysoce rizikové prostředí s nebezpečnou radiací, ale bohaté na určité suroviny.;yellowStone;null;station;asteroid
+planetb;POZOR! Extrémní podmínky s omezenými zdroji, ale se vzácnými rudami.;blueStone;null;station;asteroid
+planetc;POZOR! Bohaté přírodní prostředí, ale s agresivními příšerami.;redStone;null;station;asteroid
+asteroid;POZOR! Oblast s cennými kovy, kde je navigace náročná.;grayStone;null;bandit;planeta;planetb;planetc;
+bandit; NEZNAME MISTO... ;emeraldStone;bandit;asteroid

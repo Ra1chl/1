@@ -8,9 +8,12 @@ public class Console {
     private boolean exit = false;
     private Scanner scanner = new Scanner(System.in);
 
-    public Console(Game game, LoadMap loader, Move moveCommand) {
+    public Console(Game game, LoadMap loader, Move moveCommand, Inventory inventory, Shop shop, Mine mine) {
         map.put("stop", new Quit());
         map.put("move", moveCommand);
+        map.put("inventory", inventory);
+        map.put("shop", shop);
+        map.put("mine", mine);
     }
 
     public void doCommand() {

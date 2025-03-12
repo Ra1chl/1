@@ -25,13 +25,16 @@ public class LoadMap {
 
                 String name = parts[0].trim();
                 String info = parts[1].trim();
+                String item = parts[2].trim();
+                String npc = parts[3].trim();
+
                 ArrayList<String> neighbors = new ArrayList<>();
 
-                for (int i = 2; i < parts.length; i++) {
+                for (int i = 4; i < parts.length; i++) {
                     neighbors.add(parts[i].trim()); // Uložíme jména sousedů
                 }
 
-                Location location = createLocation(name, info, neighbors);
+                Location location = createLocation(name, info,item,npc, neighbors);
                 if (location != null) {
                     locations.put(name, location);
                     map.add(location);
@@ -58,16 +61,16 @@ public class LoadMap {
         }
     }
 
-    private Location createLocation(String name, String info, ArrayList<String> neighbors) {
+    private Location createLocation(String name, String info, String item, String npc, ArrayList<String> neighbors) {
         switch (name.toLowerCase()) {
-            case "ship": return new Ship(name, info, neighbors);
-            case "planeta": return new PlanetA(name, info, neighbors);
-            case "planetb": return new PlanetB(name, info, neighbors);
-            case "planetc": return new PlanetC(name, info, neighbors);
-            case "station": return new Station(name, info, neighbors);
-            case "asteroid": return new Asteroid(name, info, neighbors);
-            case "bandit": return new Bandit(name, info, neighbors);
-            case "hangar": return new Hangar(name, info, neighbors);
+            case "ship": return new Ship(name, info,item,npc, neighbors);
+            case "planeta": return new PlanetA(name, info,item,npc, neighbors);
+            case "planetb": return new PlanetB(name, info,item,npc, neighbors);
+            case "planetc": return new PlanetC(name, info,item,npc, neighbors);
+            case "station": return new Station(name, info,item,npc, neighbors);
+            case "asteroid": return new Asteroid(name, info,item,npc, neighbors);
+            case "bandit": return new Bandit(name, info,item,npc, neighbors);
+            case "hangar": return new Hangar(name, info,item,npc, neighbors);
             default: return null; // Pokud název neodpovídá žádné třídě, vrátíme null
         }
     }
