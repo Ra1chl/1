@@ -1,7 +1,4 @@
-import Command.Inventory;
-import Command.Mine;
-import Command.Move;
-import Command.Shop;
+import Command.*;
 import Space.LoadMap;
 import Space.Location;
 import Space.Game;
@@ -33,8 +30,9 @@ public class Main {
         Inventory inventory = new Inventory(player);
         Shop shop = new Shop(player,game,loader);
         Mine mine = new Mine(player,game,loader);
+        Info info = new Info(game);
 
-        Console c = new Console(game, loader, moveCommand, inventory,shop,mine);
+        Console c = new Console(game, loader, moveCommand, inventory,shop,mine,info);
         c.start();
 
     }

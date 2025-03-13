@@ -12,7 +12,7 @@ public class Inventory implements Command {
     @Override
     public String execute() {
         player.showInventory();
-        return "That's all!";
+        return "To je vše!";
     }
 
     @Override

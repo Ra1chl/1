@@ -45,6 +45,7 @@ public class Player {
 
         for (Item i : inventory) {
             sumPrice += i.getPrice();
+            inventory.remove(i);
         }
 
         this.credits += sumPrice;

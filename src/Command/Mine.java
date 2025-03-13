@@ -2,8 +2,6 @@ package Command;
 
 import Space.*;
 
-import java.util.Scanner;
-
 public class Mine implements Command {
     private Player player;
     private static Game game;

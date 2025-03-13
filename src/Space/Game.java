@@ -1,5 +1,11 @@
 package Space;
 
+import javax.imageio.IIOException;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class Game {
     private Location currentLocation;
 
@@ -8,12 +14,11 @@ public class Game {
     }
 
 
-
     public Game(Location startingLocation) {
         this.currentLocation = startingLocation;
     }
 
-    public void startGame (){
+    public void startGame() {
         LoadMap loader = new LoadMap();
         if (!loader.loadMap()) {
             System.out.println("Chyba při načítání mapy!");
@@ -47,6 +52,18 @@ public class Game {
         for (String neighbor : currentLocation.neighbors) {
             System.out.println("- " + neighbor);
         }
+    }
+
+    public String read(String file) {
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return "";
     }
 
     public Location getCurrentLocation() {

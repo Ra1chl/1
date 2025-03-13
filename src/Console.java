@@ -8,12 +8,13 @@ public class Console {
     private boolean exit = false;
     private Scanner scanner = new Scanner(System.in);
 
-    public Console(Game game, LoadMap loader, Move moveCommand, Inventory inventory, Shop shop, Mine mine) {
+    public Console(Game game, LoadMap loader, Move moveCommand, Inventory inventory, Shop shop, Mine mine,Info info) {
         map.put("stop", new Quit());
         map.put("move", moveCommand);
         map.put("inventory", inventory);
         map.put("shop", shop);
         map.put("mine", mine);
+        map.put("info", info);
     }
 
     public void doCommand() {
@@ -21,7 +22,7 @@ public class Console {
         String command = scanner.nextLine().trim().toLowerCase();
 
         if (map.containsKey(command)) {
-            System.out.println(">> " + map.get(command).execute());
+            System.out.println(map.get(command).execute());
         } else {
             System.out.println(">> Nedefinovaný příkaz");
         }

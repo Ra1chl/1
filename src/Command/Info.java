@@ -1,14 +1,17 @@
 package Command;
 
+import Space.Game;
+
 public class Info implements Command {
+    private Game game;
+
+    public Info(Game game) {
+        this.game = game;
+    }
 
     public String execute() {
-        System.out.println("move => move around the map \n" +
-                "inventory => show inventory \n" +
-                "quit => end game \n" +
-                "shop => sell your goodes\n" +
-                "");
-        return null;
+
+        return game.read("cominfo.txt");
     }
 
     @Override
