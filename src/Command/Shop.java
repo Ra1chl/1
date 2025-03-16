@@ -22,17 +22,16 @@ public class Shop implements Command {
         if (game.getCurrentLocation().getName().equals(station.getName())) {
 
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Trader: \"I want to buy everything from you!!\" \n Do you agree? Yes/No ");
+            System.out.println("Obchodník: \"Chci od tebe koupit všechno!!\" \n Souhlasíš? Ano/Ne ");
             String answer = scanner.nextLine().trim().toLowerCase();
 
-            if (answer.equals("yes")) {
+            if (answer.equals("ano")) {
                 player.sellItem();
 
-                System.out.println();
-                return "You have" + player.getCredits() + "credits";
+                return "Máš " + player.getCredits() + " kreditů.";
             }
         }
-        return "You must be in station.";
+        return "Musíš být v lokaci: STATION.";
     }
 
     @Override

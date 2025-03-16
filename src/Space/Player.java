@@ -45,10 +45,12 @@ public class Player {
 
         for (Item i : inventory) {
             sumPrice += i.getPrice();
-            inventory.remove(i);
         }
 
+        inventory.clear();
+
         this.credits += sumPrice;
+        System.out.println("test");
 
     }
 
