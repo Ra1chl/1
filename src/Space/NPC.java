@@ -4,6 +4,7 @@ public class NPC {
     private String name;
     private String role;
 private Mission mission;
+private boolean bad; //je zly nebo hodbny
 
     public NPC(String name, String role) {
         this.name = name;

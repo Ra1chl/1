@@ -7,16 +7,19 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class Game {
+    private Player player;
     private Location currentLocation;
 
-    public Game() {
 
-    }
-
-
-    public Game(Location startingLocation) {
+    public Game(Location startingLocation, Player player) {
         this.currentLocation = startingLocation;
+        this.player = player;
     }
+
+    public Player getPlayer() {
+        return player;
+    }
+
 
     public void startGame() {
         LoadMap loader = new LoadMap();
@@ -30,7 +33,7 @@ public class Game {
             System.out.println("Startovní lokace nebyla nalezena!");
             return;
         }
-        Game game = new Game(startLocation);
+        Game game = new Game(startLocation, player);
 
         // Spustíme pohybovou logiku
         //movement.startMovement();

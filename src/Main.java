@@ -21,19 +21,20 @@ public class Main {
             return;
         }
 
-        Game game = new Game(startLocation);
-
         // Vytvoření hráče
         Player player = new Player("Captain", 100, new ArrayList<>());
 
+        // Předání hráče do Game
+        Game game = new Game(startLocation, player);
+
         Move moveCommand = new Move(game, loader);
         Inventory inventory = new Inventory(player);
-        Shop shop = new Shop(player,game,loader);
-        Mine mine = new Mine(player,game,loader);
+        Shop shop = new Shop(player, game, loader);
+        Mine mine = new Mine(player, game, loader);
         Info info = new Info(game);
 
-        Console c = new Console(game, loader, moveCommand, inventory,shop,mine,info);
-        c.start();
 
+        Console c = new Console(game, loader, moveCommand, inventory, shop, mine, info,player);
+        c.start();
     }
 }
