@@ -8,13 +8,15 @@ public class Console {
     private boolean exit = false;
     private Scanner scanner = new Scanner(System.in);
 
-    public Console(Game game, LoadMap loader, Move moveCommand, Inventory inventory, Shop shop, Mine mine, Info info, Player player) {
+    public Console(Game game, LoadMap loader, Move moveCommand, Inventory inventory, Shop shop, Mine mine, Info info, Player player, Heal heal,Upgrade upgrade) {
         map.put("stop", new Quit());
         map.put("move", moveCommand);
         map.put("inventory", inventory);
         map.put("shop", shop);
         map.put("mine", mine);
         map.put("info", info);
+        map.put("heal", heal);
+        map.put("upgrade", upgrade);
 
         // Přidáme boj
         Enemy bandit = new Enemy("Bandit", 50, 8);

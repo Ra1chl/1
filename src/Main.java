@@ -32,9 +32,10 @@ public class Main {
         Shop shop = new Shop(player, game, loader);
         Mine mine = new Mine(player, game, loader);
         Info info = new Info(game);
+        Heal heal = new Heal(player, game, loader);
+        Upgrade upgrade = new Upgrade(player, game, loader);
 
-
-        Console c = new Console(game, loader, moveCommand, inventory, shop, mine, info,player);
+        Console c = new Console(game, loader, moveCommand, inventory, shop, mine, info,player,heal,upgrade);
         c.start();
     }
 }

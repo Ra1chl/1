@@ -18,7 +18,7 @@ public class Player {
     }
 
     public void showInventory() {
-        System.out.println("You have " + inventory.size() + " items");
+        System.out.println("Máš " + inventory.size() + " itemů.");
 
         for (Item item : inventory) {
             System.out.println(item);
@@ -28,11 +28,11 @@ public class Player {
 
     public void addItem(Item item) {
         // Přidání předmětu do inventáře
-        if (inventory.size() < 21) {
+        if (inventory.size() < 3) {
             inventory.add(item);
-            System.out.println("You put " + item.getItemName() + " into the inventory");
+            System.out.println("Vytěžil si " + item.getItemName() + " a uložil si ho do inventáře.");
         } else {
-            System.out.println("You have full inventory. Go back to the station");
+            System.out.println("Máš plný inventář. Vrať se na STANICI.");
         }
     }
 
@@ -50,9 +50,14 @@ public class Player {
         return health > 0;
     }
 
+    public String healPlayer(){
 
-    public void buyItem(Item item, int price) {
-        // Koupě předmětu
+        if (this.health < 100 ){
+            this.health = 100;
+            return "You healed " + this.health + " health!";
+        }else {
+            return "You are full. Go back to the station";
+        }
     }
 
     public void sellItem() {
@@ -65,8 +70,26 @@ public class Player {
         inventory.clear();
 
         this.credits += sumPrice;
-        System.out.println("test");
+        System.out.println("Všechny předmety prodany");
 
+    }
+
+    public boolean spendCredits(int amount) {
+        if (credits >= amount) {
+            credits -= amount;
+            return true;
+        }
+        return false;
+    }
+
+    public void increaseAttackPower() {
+        attackPower += 5;
+        System.out.println("Síla útoku zvýšena na " + attackPower);
+    }
+
+    public void increaseHealth() {
+        health += 20;
+        System.out.println("Zdraví zvýšeno na " + health);
     }
 
     public int getHealth() {
