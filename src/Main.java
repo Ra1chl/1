@@ -36,6 +36,43 @@ public class Main {
         Upgrade upgrade = new Upgrade(player, game, loader);
 
         Console c = new Console(game, loader, moveCommand, inventory, shop, mine, info,player,heal,upgrade);
+
+        System.out.println(
+                "╔════════════════════════════════════════════╗\n" +
+                        "║  🚀 VÍTEJ VE SVÉ POSLEDNÍ ŠANCI! 🚀       ║\n" +
+                        "╠════════════════════════════════════════════╣\n" +
+                        "║ Jsi bývalý pilot, teď jen muž s dluhem,   ║\n" +
+                        "║ který tě tíží jako gravitace černé díry.  ║\n" +
+                        "║ Našel sis práci pro těžební korporaci,    ║\n" +
+                        "║ která vydírá zoufalé kapitány jako jsi ty.║\n" +
+                        "║ Tvým úkolem je těžit suroviny na planetách║\n" +
+                        "║ – ale vesmír je temné a nebezpečné místo. ║\n" +
+                        "║ Spravuj svou loď, přežij nástrahy a hlavně║\n" +
+                        "║ splať svůj dluh... pokud chceš ještě vidět║\n" +
+                        "║ svou rodinu.                              ║\n" +
+                        "╚════════════════════════════════════════════╝"
+        );
+        System.out.println(
+                "╔════════════════════════════════════════╗\n" +
+                        "║           🛸 PŘEHLED PŘÍKAZŮ 🛸        ║\n" +
+                        "╠════════════════════════════════════════╣\n" +
+                        "║ 🚀 MOVE – Pohyb mezi lokacemi ve vesmíru.║\n" +
+                        "║    Prozkoumávej, cestuj, přežívej!       ║\n" +
+                        "║ 📦 INVENTORY – Zobraz svůj inventář.     ║\n" +
+                        "║    Sleduj, co jsi nasbíral.              ║\n" +
+                        "║ ⛏️ MINE – Těžba surovin v aktuální lokaci.║\n" +
+                        "║    Ale pozor na nebezpečí!               ║\n" +
+                        "║ 🏪 SHOP – Prodej své suroviny na STATION.║\n" +
+                        "║    Vydělávej kredity na přežití.         ║\n" +
+                        "║ 🔧 HEAL – Oprava lodi v HANGARU.         ║\n" +
+                        "║    Udržuj svůj stroj v kondici!          ║\n" +
+                        "║ 💪 UPGRADE – Vylepši své atributy.       ║\n" +
+                        "║    Získej větší sílu a odolnost.         ║\n" +
+                        "║ 📜 INFO – Zobraz seznam dostupných příkazů.║\n" +
+                        "║ ✨ GAME – Zobraz hlavní cíl hry.         ║\n" +
+                        "║ ❌ QUIT – Ukončení hry.                  ║\n" +
+                        "╚════════════════════════════════════════╝"
+        );
         c.start();
     }
 }

@@ -2,13 +2,30 @@
 
 Zde je přehled všech příkazů, které můžete ve hře použít:
 
-🔹 MOVE – Pohybujte se mezi lokacemi ve vesmíru. 🌍✨
-🔹 INVENTORY – Zobrazte si svůj aktuální inventář. 📦🔍
-🔹 MINE – Těžte suroviny dostupné v dané lokaci. ⛏️💎
-🔹 SHOP – Na lokaci STATION můžete prodávat své úlovky. 🏪💰
-🔹 QUEST – Interagujte s NPC a přijímejte od nich úkoly. 📝🛸
-🔹 STOP – Ukončete hru. ❌🕹️
-🔹 INFO – Zobrazí všechny dostupné příkazy. 📜🔎
-🔹 GAME - Zobrazí cíl hry. ✨📜
+🛸 PŘEHLED PŘÍKAZŮ 🛸
+
+🚀 MOVE – Pohyb mezi lokacemi ve vesmíru.
+   Prozkoumávej, cestuj, přežívej!
+
+📦 INVENTORY – Zobraz svůj inventář.
+   Sleduj, co jsi nasbíral.
+
+⛏️ MINE – Těžba surovin v aktuální lokaci.
+   Ale pozor na nebezpečí!
+
+🏪 SHOP – Prodej své suroviny na STATION.
+   Vydělávej kredity na přežití.
+
+🔧 HEAL – Oprava lodi v HANGARU.
+   Udržuj svůj stroj v kondici!
+
+💪 UPGRADE – Vylepši své atributy.
+   Získej větší sílu a odolnost.
+
+📜 INFO – Zobraz seznam dostupných příkazů.
+
+✨ GAME – Zobraz hlavní cíl hry.
+
+❌ QUIT – Ukončení hry.
 
 Vydejte se do vesmíru a objevujte jeho tajemství! 🚀🌌

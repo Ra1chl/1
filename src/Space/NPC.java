@@ -1,6 +1,6 @@
 package Space;
 
-public class NPC {
+public class  NPC {
     private String name;
     private String role;
 private Mission mission;

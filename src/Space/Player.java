@@ -92,6 +92,16 @@ public class Player {
         System.out.println("Zdraví zvýšeno na " + health);
     }
 
+    public String clearDebt(){
+return "╔══════════════════════════════════════════╗\n" +
+                "║  🎉 GRATULUJEME! 🎉                     ║\n" +
+                "╠══════════════════════════════════════════╣\n" +
+                "║ Splatil jsi svůj dluh a nyní můžeš      ║\n" +
+                "║ v klidu žít se svou rodinou.           ║\n" +
+                "║ Tvůj příběh je u konce... nebo ne?     ║\n" +
+                "╚══════════════════════════════════════════╝";
+
+    }
     public int getHealth() {
         return health;
     }

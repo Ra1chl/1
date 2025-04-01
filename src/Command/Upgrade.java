@@ -1,6 +1,7 @@
 package Command;
 import Space.*;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Upgrade implements Command {
@@ -22,9 +23,14 @@ public class Upgrade implements Command {
         }
 
         Scanner scanner = new Scanner(System.in);
+        int choice;
         System.out.println("Co si chceš koupit?\n1. Zvýšení síly (30 kreditů)\n2. Zvýšení života (40 kreditů)");
-        int choice = scanner.nextInt();
-        scanner.nextLine(); // Odstranění nového řádku
+
+        try {
+            choice = scanner.nextInt();
+        } catch (InputMismatchException e) {
+            return "⚠ Neplatný vstup! Zadej číslo 1 nebo 2. ⚠";
+        }
 
         switch (choice) {
             case 1:
