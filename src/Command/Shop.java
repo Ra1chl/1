@@ -4,12 +4,22 @@ import Space.*;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * Třída Shop implementuje příkaz pro obchodování s hráčem.
+ */
 public class Shop implements Command {
     private Player player;
     private Game game;
     private LoadMap loader;
     private Location station;
 
+    /**
+     * Konstruktor třídy Shop.
+     *
+     * @param player Hráč, který obchoduje.
+     * @param game Hra, ve které se hráč nachází.
+     * @param loader Načítání mapy.
+     */
     public Shop(Player player, Game game, LoadMap loader) {
         this.player = player;
         this.game = game;
@@ -17,6 +27,11 @@ public class Shop implements Command {
         this.station = loader.findLocation("station");
     }
 
+    /**
+     * Provádí obchodování s hráčem, včetně prodeje a vykoupení.
+     *
+     * @return Zpráva o výsledku obchodování.
+     */
     public String execute() {
         if (!game.getCurrentLocation().getName().equals(station.getName())) {
             return "Musíš být v lokaci: STATION.";

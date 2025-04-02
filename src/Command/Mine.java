@@ -2,17 +2,32 @@ package Command;
 
 import Space.*;
 
+/**
+ * Třída Mine implementuje příkaz pro těžbu surovin.
+ */
 public class Mine implements Command {
     private Player player;
     private static Game game;
     private static LoadMap loader;
 
+    /**
+     * Konstruktor třídy Mine.
+     *
+     * @param player Hráč, který těží suroviny.
+     * @param game Hra, ve které se hráč nachází.
+     * @param loader Načítání mapy.
+     */
     public Mine(Player player, Game game, LoadMap loader) {
         this.player = player;
         this.game = game;
         this.loader = loader;
     }
 
+    /**
+     * Provádí těžbu surovin na aktuální lokaci.
+     *
+     * @return Zpráva o výsledku těžby.
+     */
     public String execute() {
         String itemName = game.getCurrentLocation().getTypeOfItem();
 

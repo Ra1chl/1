@@ -6,21 +6,35 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * Třída Game představuje hlavní herní logiku.
+ * Spravuje hráče a aktuální lokaci.
+ */
 public class Game {
     private Player player;
     private Location currentLocation;
 
-
+    /**
+     * Konstruktor pro inicializaci hry.
+     * @param startingLocation Výchozí lokace hry.
+     * @param player Hráč ve hře.
+     */
     public Game(Location startingLocation, Player player) {
         this.currentLocation = startingLocation;
         this.player = player;
     }
 
+    /**
+     * Vrátí hráče.
+     * @return Instance hráče.
+     */
     public Player getPlayer() {
         return player;
     }
 
-
+    /**
+     * Spustí hru, načte mapu a nastaví startovní lokaci.
+     */
     public void startGame() {
         LoadMap loader = new LoadMap();
         if (!loader.loadMap()) {
@@ -39,7 +53,11 @@ public class Game {
         //movement.startMovement();
     }
 
-
+    /**
+     * Přesune hráče do nové lokace, pokud je pohyb možný.
+     * @param destination Cílová lokace.
+     * @return True, pokud byl pohyb úspěšný, jinak false.
+     */
     public boolean moveTo(Location destination) {
         if (currentLocation.canMoveTo(destination.name)) {
             currentLocation = destination;
@@ -50,6 +68,9 @@ public class Game {
         }
     }
 
+    /**
+     * Zobrazí dostupné pohyby do sousedních lokací.
+     */
     public void showAvailableMoves() {
         System.out.println("Můžeš se přesunout na:");
         for (String neighbor : currentLocation.neighbors) {
@@ -57,6 +78,11 @@ public class Game {
         }
     }
 
+    /**
+     * Načte obsah souboru a vypíše ho do konzole.
+     * @param file Název souboru k načtení.
+     * @return Obsah souboru jako String.
+     */
     public String read(String file) {
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line;

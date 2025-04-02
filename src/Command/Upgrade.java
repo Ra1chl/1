@@ -4,12 +4,22 @@ import Space.*;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * Třída Upgrade implementuje příkaz pro vylepšení atributů hráče.
+ */
 public class Upgrade implements Command {
     private Player player;
     private Game game;
     private LoadMap loader;
     private Location ship;
 
+    /**
+     * Konstruktor třídy Upgrade.
+     *
+     * @param player Hráč, který vylepšuje své atributy.
+     * @param game Hra, ve které se hráč nachází.
+     * @param loader Načítání mapy.
+     */
     public Upgrade(Player player, Game game, LoadMap loader) {
         this.player = player;
         this.game = game;
@@ -17,6 +27,11 @@ public class Upgrade implements Command {
         this.ship = loader.findLocation("ship");
     }
 
+    /**
+     * Provádí vylepšení atributů hráče, pokud je v lodi.
+     *
+     * @return Zpráva o výsledku vylepšení.
+     */
     public String execute() {
         if (!game.getCurrentLocation().getName().equals(ship.getName())) {
             return "Musíš být v lokaci: SHIP.";

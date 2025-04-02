@@ -3,16 +3,30 @@ package Command;
 import Space.*;
 import java.util.Scanner;
 
+/**
+ * Třída Move implementuje příkaz pro pohyb hráče mezi lokacemi.
+ */
 public class Move implements Command {
     private static Game game;
     private static LoadMap loader;
     private static boolean firstMove = true;
 
+    /**
+     * Konstruktor třídy Move.
+     *
+     * @param gameInstance Instance hry.
+     * @param loadMapInstance Instance načítání mapy.
+     */
     public Move(Game gameInstance, LoadMap loadMapInstance) {
         game = gameInstance;
         loader = loadMapInstance;
     }
 
+    /**
+     * Provádí pohyb hráče na zvolenou lokaci.
+     *
+     * @return Zpráva o výsledku pohybu.
+     */
     public String execute() {
         if (game == null || loader == null) {
             return "Hra nebyla správně inicializována!";

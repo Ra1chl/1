@@ -6,15 +6,25 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * Třída LoadMap se stará o načítání mapy hry ze souboru.
+ */
 public class LoadMap {
 
     public ArrayList<Location> map = new ArrayList<>();
     private HashMap<String, Location> locations;
 
+    /**
+     * Konstruktor inicializuje datové struktury pro ukládání lokací.
+     */
     public LoadMap() {
         locations = new HashMap<>();
     }
 
+    /**
+     * Načte mapu ze souboru "map.txt".
+     * @return True, pokud bylo načítání úspěšné, jinak false.
+     */
     public boolean loadMap() {
         try (BufferedReader br = new BufferedReader(new FileReader("map.txt"))) {
             String line;
@@ -61,6 +71,16 @@ public class LoadMap {
         }
     }
 
+
+    /**
+     * Vytvoří instanci lokace na základě jejího názvu.
+     * @param name Název lokace.
+     * @param info Popis lokace.
+     * @param item Předmět v lokaci.
+     * @param npc NPC v lokaci.
+     * @param neighbors Seznam sousedních lokací.
+     * @return Instance odpovídající lokace nebo null.
+     */
     private Location createLocation(String name, String info, String item, String npc, ArrayList<String> neighbors) {
         switch (name.toLowerCase()) {
             case "ship": return new Ship(name, info,item,npc, neighbors);
@@ -75,6 +95,11 @@ public class LoadMap {
         }
     }
 
+    /**
+     * Vyhledá lokaci podle jména.
+     * @param name Název lokace.
+     * @return Instance lokace nebo null, pokud nebyla nalezena.
+     */
     public Location findLocation(String name) {
         for (Location loc : map) {
             if (loc.name.equalsIgnoreCase(name)) {
